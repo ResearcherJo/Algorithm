@@ -1,1 +1,4 @@
 aaaa
+git remote add origin https://github.com/ResearcherJo/Baekjoon.git
+git branch -M main
+git push -u origin main
