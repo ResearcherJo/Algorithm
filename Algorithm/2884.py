@@ -14,6 +14,10 @@ else:
     else:
         a=a-1
         
-print(a+" "+b)
+print(a,end=' ')
+print(b)
+    
+    
+    
     
 
