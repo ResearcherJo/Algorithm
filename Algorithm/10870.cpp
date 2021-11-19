@@ -18,6 +18,6 @@ int pibo(int n) {
 int main() {
 	int n;
 	scanf("%d", &n);
-	printf("%d", pibo(n));
+	printf("%d\n", pibo(n));
 	return 0;
 }
