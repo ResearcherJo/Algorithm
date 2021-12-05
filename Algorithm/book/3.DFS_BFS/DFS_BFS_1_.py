@@ -17,52 +17,44 @@
 
 import sys
 
-n=0
-m=0
-count=0
-def dfs(stack,x,y,visited):
-    
-    if visited[x][y]:
-        return
-    
-    visited[x][y]=True
-    
-    for i in range(n):
-        for j in range(m):
-            if not visited[i][j]:
-                dfs(stack,i,j,visited)
-                
-    
-    
-
 
 n, m = map(int,input().split())
 ma = list()
 
-visited = [[False]*m for i in range(n)]
+def dfs(x,y):
+    
+    if x<0 or x>=n or y<0 or y>=m: #에초에 index넘어가면 비교를 못하게 해야함
+        return
+    
+    if ma[x][y]!=1:
+        ma[x][y]=1
+        dfs(x+1,y)
+        dfs(x-1,y)
+        dfs(x,y+1)
+        dfs(x,y-1)
+        
+        
+    
+    
+
 
 for i in range(n):
     line = sys.stdin.readline().strip()
     
-    ma.append(list(line))
+    ma.append(list(map(int,line)))
     
+count=0    
 for i in range(n):
     for j in range(m):
-        if ma[i][j]=='1':
-            visited[i][j]=True
-print(visited)            
-dfs(ma,0,0,visited)
-print(visited)   
-
-        
-print(ma)
-
+        if ma[i][j]!=1:
+            count+=1
+            dfs(i,j)
+            
+print(count)
 '''
-    아이디어는 냈으나 어떻게 구현할지가 정말 몰랐고, 생각해낸 구현 방법도 틀렸다. 문제에 답이 있었지만 제대로 안 읽었다.
-    
     # N, M을 공백을 기준으로 구분하여 입력 받기
     n, m = map(int, input().split())
-    
+
     # 2차원 리스트의 맵 정보 입력 받기
     graph = []
     for i in range(n):
@@ -92,8 +84,7 @@ print(ma)
             # 현재 위치에서 DFS 수행
             if dfs(i, j) == True:
                 result += 1
-
+    
     print(result) # 정답 출력
 '''
-    
     
