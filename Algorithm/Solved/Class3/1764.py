@@ -35,5 +35,7 @@ for i in g:
     print(len(duplicate))
     for name in sorted(duplicate):
         print(name)
+        
+    집합을 이용하면 좀 더 빠르게 해결할 수 있었떤 문제였다. 두개의 값을 비교하는 거였으니까 교집합을 구하면 됬다.
 
 '''
