@@ -1,24 +1,4 @@
 
-
-
-n = int(input())
-count=0
-a = n**(1/2)
-
-while True:
-    print(n) 
-    if n == 0:
-        break
-    
-    if a-int(a)==0:
-        n-=a**2
-        count+=1
-        a = n**(1/2)
-    else:
-        a-=1
-
-print(count)
-
 '''
 
     자연수 n이 주어질 때, n을 최소 개수의 제곱수 합(<=4)으로 표현하는 문제이다.
