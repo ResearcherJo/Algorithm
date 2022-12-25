@@ -1,17 +1,7 @@
+from sys import stdin, stdout
 
-#다이나믹 프로그래밍, 
+input = stdin.readline 
 
-n = int(input())
 
-d = [0]*(n+2)
-d[1] = 1
-d[2] = 1
 
-for i in range(3,n+2) :
-    d[i] = d[i-1] + d[i-2]
 
-print(d[n+1]%10007)
-
-'''
-    문제를 풀때는 경우의 수를 나열해보고, 규칙이 있는지 찾아보자.
-'''
