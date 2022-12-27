@@ -1,12 +1,15 @@
+from sys import stdin, stdout
 
+input = stdin.readline 
 
 n = int(input())
 
-d = [0]*(n+2)
-d[1] = 1
-d[2] = 1
+array = [0 for i in range(10000)]
 
-for i in range(3,n+2) :
-    d[i] = d[i-1] + d[i-2]*2
+array[1] = 1
+array[2] = 3
 
-print(d[n+1]%10007)
+for i in range(3,n+1):
+    array[i] = array[i-1] + array[i-2]*2
+
+print(array[n]%10007)
