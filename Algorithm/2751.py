@@ -1,14 +1,12 @@
+from sys import stdin
 
+input = stdin.readline
 
+n = int(input())
 
-N = int(input())
+array = [int(input()) for i in range(n)]
 
-L = list()
+array.sort()
 
-for i in range(N):
-    L.append(int(input()))
-    
-L.sort()
-    
-for i in L:
-    print(i)
+for i in range(n):
+    print(array[i])

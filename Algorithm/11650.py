@@ -1,17 +1,13 @@
+from sys import stdin
 
+input = stdin.readline
 
-import sys
+n = int(input())
 
+array = [list(map(int,input().split())) for i in range(n)]
 
-N = int(input())
+array.sort(key=lambda x : x[1])
+array.sort(key=lambda x : x[0])
 
-l = list()
-
-for i in range(N):
-    l.append(list(map(int,sys.stdin.readline().split())))
-    
-l.sort(key = lambda x: x[1])
-l.sort(key = lambda x: x[0])
-
-for i in l:
-    print(i[0], i[1])
+for i in range(n):
+    print(array[i][0],array[i][1])
