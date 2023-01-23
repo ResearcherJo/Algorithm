@@ -1,23 +1,22 @@
-from collections import deque
+from sys import stdin
 
-T = int(input())
+input = stdin.readline
 
+n = int(input())
 
-for i in range(T):
-    L = input()
-    deq = deque()
-    for i in L:
-        if i=='(' or i=='[':
-            deq.append(i)
-        elif (i==']' or i==')'):
-            if len(deq)==0:
-                print('NO')
-                break
-            elif (i==']' and deq.pop()!='[') or (i==')' and deq.pop()!='('):
-                print('NO')
-                break
-    else:
-        if len(deq)==0:
-            print('YES')
-        else:
+for i in range(n):
+    string = list(input())
+    stack = list()
+    for i in string:
+        if i =='(': 
+            stack.append('(')
+        elif i==')' and stack:
+            stack.pop()
+        elif i==')' and not stack: # ) 인경우인데 스택이 비어있다면 NO를 출력
             print('NO')
+            break
+    else:
+        if stack:
+            print('NO')
+        else:
+            print('YES')
