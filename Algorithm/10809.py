@@ -1,20 +1,14 @@
-'''
-a = 97
-'''
+from sys import stdin
 
-st = [-1 for i in range(26)]
+input = stdin.readline
 
-s = list(input())
+S = input()
 
-for i in s:
-    st[ord(i)-97]=s.index(i)
-    
-for i in st:
-    print(i,end=' ')
-    
-''' 좀 더 쉬운 코드
-    string = input()
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    for i in alphabet:
-        print(string.find(i), end = ' ')
-'''
+array = [-1 for i in range(26)] # 포함되어 있지 않은 경우 -1이기에 -1로 초기와
+
+for i in range(26):
+    s = chr(i+97) #a ~ z까지 비교하기 위함이다.
+    if s in S:
+        array[i] = S.index(s) 
+
+print(*array)
