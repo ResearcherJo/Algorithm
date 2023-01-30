@@ -1,18 +1,21 @@
 from sys import stdin
+from collections import deque
 
 input = stdin.readline
 
 n, k = map(int,input().split())
 
-queue = [i+1 for i in range(n)]
+queue = deque()
 array = list()
 
-cnt = 0
-
+for i in range(1,n+1):
+    queue.append(i)
 
 for i in range(n):
-    cnt = (cnt + k - 1)%len(queue)
 
-    array.append(str(queue.pop(cnt)))
+    for j in range(k-1):
+        queue.append(queue.popleft())
+    
+    array.append(str(queue.popleft()))
 
 print("<",", ".join(array),">",sep='')

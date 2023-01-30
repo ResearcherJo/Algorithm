@@ -34,7 +34,7 @@ def query(tree, node, start, end, order):
     if order <= tree[node*2]:
         return query(tree, node*2, start, mid, order)
     else:
-        return query(tree, node*2+1, mid+1, end, order-tree[node*2])
+        return query(tree, node*2+1, mid+1, end, order-tree[node*2]) #tree[node*2]다음으로 몇번째 수인지 찾기 위해서 
 
 
 
