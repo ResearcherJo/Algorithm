@@ -4,7 +4,7 @@ input = stdin.readline
 
 n = int(input())
 result =''
-print(7//-2,7%-2)
+
 while n!=0:
     if n%(-2): 
         result = '1' + result #-2로 나누어 떨어지지 않으니 1을 추가한다.
