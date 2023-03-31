@@ -1,7 +1,6 @@
 import sys
-sys.setrecursionlimit(111111) #충분한 재귀 깊이를 주어 오류를 예방
-
-
+sys.setrecursionlimit(10**6) #충분한 재귀 깊이를 주어 오류를 예방
+ 
 def dfs(x):
     global result
     visited[x] = True
