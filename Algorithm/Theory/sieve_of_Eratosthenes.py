@@ -16,4 +16,4 @@ def prime_list(n):
                 sieve[j] = False
 
     # 소수 목록 산출
-    return [i for i in range(2, n) if sieve[i] == True]
+    return [i for i in range(2, n+1) if sieve[i] == True]

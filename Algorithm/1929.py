@@ -1,17 +1,21 @@
-m, n = map(int, input().split())
+from sys import stdin, stdout
 
-a = [False,False] + [True]*(n-1)
-primes=[]
+input = stdin.readline 
 
-for i in range(2,n+1):
-    if a[i]:
-        primes.append(i)
-    for j in range(2*i, n+1, i):
-        a[j] = False
+def sieve(n, m):
+    l = [False, False] + [True]*(m)
 
-for i in primes:
-    if i>=m and i<=n:
-        print(i)
-        
-        
-#에라토스테네스의 체 구현
+    k = int(m**0.5)
+    for i in range(2, k+1):
+        if l[i]:
+            for j in range(i+i,m+1,i):
+                l[j] = False
+
+    return [i for i in range(n, m+1) if l[i] == True]
+
+n, m = map(int,input().split())
+
+array = sieve(n, m)
+for i in array:
+    print(i)
+
