@@ -1,3 +1,7 @@
+'''
+풀이
+https://velog.io/@babnbabn/7576번-토마토-Python
+'''
 from sys import stdin
 from collections import deque
 
@@ -52,4 +56,4 @@ else:
     for i in array:
         if mx<max(i):
             mx = max(i)
-    print(mx-1)
+    print(mx-1) #1부터 시작했기 때문에 1을 빼줘야 한다.
