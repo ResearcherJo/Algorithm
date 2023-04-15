@@ -1,3 +1,7 @@
+'''
+풀이
+https://velog.io/@babnbabn/1167번-트리의-지름-Python
+'''
 import sys 
 
 sys.setrecursionlimit(10**6)
@@ -24,7 +28,7 @@ for i in range(n):
 dfs(1,0)
 
 
-v = visit.index(max(visit)) #node(1)에서 가장 먼 node를 v에 저장
+v = visit.index(max(visit)) #node(1)에서 가장 먼 노드 v
 
 visit = [-1] * (n+1)
 dfs(v,0) #node(v)에서 가장 먼 node까지의 길이를 다시 구한다.
