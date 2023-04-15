@@ -34,4 +34,3 @@ visit = [-1] * (n+1)
 dfs(v,0) #node(v)에서 가장 먼 node까지의 길이를 다시 구한다.
 
 print(max(visit))
-
