@@ -11,7 +11,7 @@ b = list(map(int,input().split()))
 c = list()
 
 while a_index<n and b_index<m:
-    if a[a_index]>b[b_index]:
+    if a[a_index]>b[b_index]: 
         c.append(b[b_index])
         b_index+=1
     elif a[a_index]<b[b_index]:
@@ -30,3 +30,13 @@ for i in range(a_index,n):
     c.append(a[i])
 
 print(*c)
+'''
+from sys import stdin
+
+input = stdin.readline
+nm  = input() #n,m이 필요 없으니 빼버림
+a = list(map(int,input().split()))
+b = list(map(int,input().split()))
+c = a+b
+print(*sorted(c))
+'''
