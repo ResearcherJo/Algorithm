@@ -11,13 +11,14 @@ def quad(array, x, y, n):
         for j in range(x,x+n):
             if key!=array[i][j]:
                 next = n//2
-                print('(',end='')
-                quad(array,x+(next*0),y+(next*0),next)
-                quad(array,x+(next*1),y+(next*0),next)
-                quad(array,x+(next*0),y+(next*1),next)
-                quad(array,x+(next*1),y+(next*1),next)
+                print('(',end='')#나눠짐을 의미한다.
+                quad(array,x+(next*0),y+(next*0),next) #2사분면
+                quad(array,x+(next*1),y+(next*0),next) #1사분면
+                quad(array,x+(next*0),y+(next*1),next) #3사분면
+                quad(array,x+(next*1),y+(next*1),next) #4사분면
                 print(')',end='')
                 return
+            
     print(key,end='')
     return
 
