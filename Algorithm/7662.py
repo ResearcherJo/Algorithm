@@ -50,11 +50,6 @@ def delete_min(minheap, maxheap):
         child*=2
 
     minheap[parent] = temp
-
-    for i in range(1,size+2):
-        if maxheap[i] == item:
-            for j in range(i,size+1):
-                maxheap[j] = maxheap[j+1]
     return item
 
 
@@ -62,7 +57,7 @@ def delete_max(maxheap, minheap):
     global size
     
     if size == 0:
-        return
+        return False
 
     item = maxheap[1]
     size-=1
@@ -82,17 +77,13 @@ def delete_max(maxheap, minheap):
         parent = child
         child*=2
     maxheap[parent] = temp
-
-    for i in range(1,size+2):
-        if minheap[i] == item:
-            for j in range(i,size+1):
-                minheap[j] = minheap[j+1]
     return item
 
 
 
 minheap = [-1] * 1000001
 maxheap = [-1] * 1000001
+delete = dict()
 
 t = int(input())
 
@@ -103,11 +94,25 @@ for _ in range(t):
         c, n = input().split()
         if c == 'D':
             if n == '-1':
-                delete_min(minheap,maxheap)
+                while True:
+                    m = delete_min(minheap,maxheap)
+                    if m and delete[m]>=1:
+                        delete[m] -=1
+                        break
+
+
             else:
-                delete_max(maxheap,minheap)
+                while True:
+                    m = delete_max(minheap,maxheap)
+                    if m and delete[m]>=1:
+                        delete[m] -=1
+                        break
         else:
             n = int(n)
+            if n in delete:
+                delete[n] +=1
+            else:
+                delete[n] = 0
             insert_max(maxheap,n)
             size-=1
             insert_min(minheap,n)
