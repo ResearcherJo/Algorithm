@@ -18,6 +18,7 @@ def solv():
     visited = [[False]*MAX for _ in range(MAX)]
 
     answer = 0
+    #시작점에서 BFS갈 수 있는 모든 도형을 가본다. BFS가 몇번 호출되는지 구하는 문제
     for x1,y1,x2,y2 in points:
         if not visited[x1][y1]:
             bfs(x1,y1,visited)
@@ -42,7 +43,7 @@ def bfs(sx,sy,visited):
                 visited[nx][ny] = True
                 q.appendleft((nx,ny))
 
-#
+#갈 수 있는 곳이면 True 반환 이미 갔던 곳은 False반환
 def point_validator(x,y,visited):
     if x < 0 or y < 0 or x >= MAX or y >= MAX:
         return False
