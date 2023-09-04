@@ -40,5 +40,5 @@ for i in range(n):
 
 if count==0:
     print('TT')
-else:
+else: 
     print(count)
