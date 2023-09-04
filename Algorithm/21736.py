@@ -12,7 +12,7 @@ n, m = map(int,input().split())
 campus = [list(input().strip()) for _ in range(n)]
 
 queue = deque()
-count = 0
+count = 0 
 
 def dfs(campus, i,j):
     global count
